@@ -24,22 +24,29 @@ export default function IssuePage() {
 
   const issue = data?.user.repository.issue;
 
-  const [addComment] = useMutation(ADD_COMMENT);
+  const [addComment] = useMutation(ADD_COMMENT, {
+    refetchQueries: [GET_ISSUE],
+  });
 
   const [comment, setComment] = useState("");
   function handleCommentChange(e: React.ChangeEvent) {
     setComment((e.target as HTMLInputElement).value);
   }
 
-  function handleCommentSubmit(e: React.SyntheticEvent) {
+  async function handleCommentSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
 
-    addComment({
-      variables: {
-        body: comment,
-        subjectId: issue.databaseId,
-      },
-    });
+    try {
+      await addComment({
+        variables: {
+          body: comment,
+          subjectId: issue.id,
+        },
+      });
+      setComment("");
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   if (loading) return <Loading />;

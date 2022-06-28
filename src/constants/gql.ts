@@ -11,6 +11,7 @@ export const GET_ISSUE = gql`
           }
           createdAt
           databaseId
+          id
           title
           comments(first: 10) {
             nodes {
@@ -89,9 +90,7 @@ export const GET_REPOSITORY_ID = gql`
   query GetRepo($userName: String!, $repoName: String!) {
     user(login: $userName) {
       repository(name: $repoName) {
-        node {
-          id
-        }
+        id
       }
     }
   }
@@ -128,7 +127,7 @@ export const CREATE_ISSUE = gql`
       input: { body: $body, title: $title, repositoryId: $repositoryId }
     ) {
       issue {
-        title
+        number
       }
     }
   }

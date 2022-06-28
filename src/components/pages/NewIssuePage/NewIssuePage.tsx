@@ -9,9 +9,10 @@ import Input from "../../ui/Input";
 import TextArea from "../../ui/TextArea";
 import Title from "../../ui/Title";
 import { useMutation, useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function NewIssuePage() {
+  const navigate = useNavigate();
   const { userName, repoName } = useParams();
   const [issueTitle, setIssueTitle] = useState("");
   const [issueComment, setIssueComment] = useState("");
@@ -30,15 +31,25 @@ export default function NewIssuePage() {
     setIssueComment((e.target as HTMLInputElement).value);
   }
 
-  function handleIssueSubmit(e: React.SyntheticEvent) {
+  async function handleIssueSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
-    createIssue({
-      variables: {
-        title: issueTitle,
-        body: issueComment,
-        repositoryId: data.user.repository.databaseId,
-      },
-    });
+    try {
+      const res = await createIssue({
+        variables: {
+          title: issueTitle,
+          body: issueComment,
+          repositoryId: data.user.repository.id,
+        },
+      });
+
+      setTimeout(() => {
+        navigate(
+          `/${userName}/${repoName}/${res.data.createIssue.issue.number}`
+        );
+      }, 1000);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   return (
