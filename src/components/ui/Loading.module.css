@@ -1,0 +1,37 @@
+.container {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.outer {
+  border: 2px solid black;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  animation: spin 1s infinite linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  border: 2px solid black;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  animation: spin 500ms infinite linear reverse;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

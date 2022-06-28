@@ -1,0 +1,12 @@
+.container {
+  margin-bottom: .5rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.totalCount {
+  font-size: .8rem;
+}

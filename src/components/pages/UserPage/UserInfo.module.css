@@ -1,0 +1,31 @@
+.container {
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.login {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+.company {
+  font-size: .8rem;
+}
+
+.followers {
+  font-size: .8rem;
+  margin: 1rem 0;
+}
+

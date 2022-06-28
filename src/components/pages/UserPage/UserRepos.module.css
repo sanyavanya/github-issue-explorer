@@ -1,0 +1,11 @@
+.container {
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  width: fit-content;
+}

@@ -1,0 +1,8 @@
+.App {
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+
+}

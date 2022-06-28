@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.repositories {
+  border: 2px solid #bbb;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.count {
+  margin-left: .5rem;
+  padding: .3rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+}

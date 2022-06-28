@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.text {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+}
+
+.bar1 {
+  height: 5rem;
+  border-left: 2px solid black;
+  transform: rotate(45deg);
+  animation: wiggle1 823ms infinite;
+}
+
+.bar2 {
+  height: 5rem;
+  border-left: 2px solid black;
+  transform: rotate(-45deg);
+  animation: wiggle2 613ms infinite;
+}
+
+@keyframes wiggle1 {
+  0% {
+    transform: rotate(43deg) translateX(0);
+  }
+
+  50% {
+    transform: rotate(51deg) translateX(2px);
+  }
+
+  100% {
+    transform: rotate(43deg) translateX(0px);
+  }
+}
+
+@keyframes wiggle2 {
+  0% {
+    transform: rotate(-44deg) translateX(2px);
+  }
+
+  50% {
+    transform: rotate(-53deg) translateX(-3px);
+  }
+
+  100% {
+    transform: rotate(-44deg) translateX(2px);
+  }
+}

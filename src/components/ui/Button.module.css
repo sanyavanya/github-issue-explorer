@@ -1,0 +1,15 @@
+.container {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.container:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.container a {
+  color: black;
+  text-decoration: none;
+}
